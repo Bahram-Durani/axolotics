@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" id="theme-color" />
+  <meta name="color-scheme" content="light" id="color-scheme" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="light-content" id="status-bar-style" />
+  <title>Aptapolis Technology</title>
+  <link href="assets/icon.jpg" rel="icon" type="image/png" />
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <script>
+    window.va =
+      window.va ||
+      function () {
+        window.vaq = window.vaq || [];
+        window.vaq.push(arguments);
+      };
+  </script>
+  <script defer src="_vercel/insights/script.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1a202c", // Dark text for light theme
+            accent: "#3498db",
+            textLight: "#4a5568", // Dark gray text for light theme
+            textDark: "#2d3748", // Darker text for headings
+            bgLight: "#ffffff", // White background
+            bgLightSecondary: "#f7fafc", // Very light gray
+            cardLight: "#ffffff", // White cards
+            cardLightSecondary: "#f8fafc", // Light gray cards
+            borderLight: "#e2e8f0", // Light borders
+            accentLight: "#ebf8ff", // Light accent background
+            // Dark theme colors
+            bgDark: "#0f172a",
+            bgDarkSecondary: "#1e293b",
+            cardDark: "#1e293b",
+            cardDarkSecondary: "#334155",
+            borderDark: "#334155",
+            textDarkTheme: "#e2e8f0",
+            textDarkSecondary: "#94a3b8",
+            accentDark: "#1e293b",
+          },
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+            mono: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+  class="select-none font-sans text-textLight bg-bgLight dark:text-textDarkTheme dark:bg-bgDark dark-mode-transition"
+  id="body">
+  <!-- Header -->
+  <header class="px-[5%] py-2 z-50 fixed top-0 left-0 w-full transition-all duration-300">
+    <div class="flex items-center justify-between">
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex gap-8 items-center text-sm font-medium bg-white dark:bg-cardDark backdrop-blur-md px-8 py-6 rounded-full border border-borderLight dark:border-borderDark transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 mx-auto dark-mode-transition">
+        <a href="#hero-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Home</a>
+
+        <!-- About Dropdown -->
+        <div class="dropdown">
+          <a href="#about-section"
+            class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme flex items-center">
+            About
+            <svg class="dropdown-chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-content">
+            <a href="#about-section" class="dropdown-item">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <div class="font-medium text-textDark dark:text-textDarkTheme">
+                    About Us
+                  </div>
+                  <div class="text-xs text-textLight dark:text-textDarkSecondary">
+                    Our story and mission
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-item">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <div class="font-medium text-textDark dark:text-textDarkTheme">
+                    Verified Business
+                  </div>
+                  <div class="text-xs text-textLight dark:text-textDarkSecondary">
+                    Trusted and verified
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#services-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Services</a>
+        <a href="#expertise-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Expertise</a>
+        <a href="#why-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Why
+          Choose</a>
+        <a href="#team-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Team</a>
+        <a href="#contact-section"
+          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Hero -->
+  <section
+    class="hero-full-height flex items-center justify-center w-full px-[3%] sm:px-[5%] bg-white dark:bg-bgDark relative overflow-hidden dark-mode-transition"
+    id="hero-section">
+    <!-- Enhanced Decorative SVG background with sophisticated patterns -->
+    <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-75" viewBox="0 0 1200 800"
+      preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <!-- Tech-inspired patterns -->
+        <pattern id="circuitPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="80" height="80" fill="none" />
+          <path d="M20,20 L60,20 L60,60 L20,60 Z" stroke="#3498db" stroke-width="1" fill="none" opacity="0.18" />
+          <circle cx="20" cy="20" r="3" fill="#3498db" opacity="0.2" />
+          <circle cx="60" cy="20" r="3" fill="#3498db" opacity="0.2" />
+          <circle cx="60" cy="60" r="3" fill="#3498db" opacity="0.2" />
+          <circle cx="20" cy="60" r="3" fill="#3498db" opacity="0.2" />
+          <path d="M40,0 L40,20 M40,60 L40,80 M0,40 L20,40 M60,40 L80,40" stroke="#3498db" stroke-width="1"
+            opacity="0.12" />
+        </pattern>
+      </defs>
+
+      <!-- Medium elements with tech feel and animations -->
+      <circle cx="800" cy="600" r="80" fill="none" stroke="#3498db" stroke-width="2" opacity="0.2">
+        <animate attributeName="r" values="80;85;80;75;80" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="2;3;2;1;2" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="800" cy="600" r="60" fill="none" stroke="#2980b9" stroke-width="1" opacity="0.18">
+        <animate attributeName="r" values="60;65;60;55;60" dur="10s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" values="0 800 600; 360 800 600" dur="30s"
+          repeatCount="indefinite" />
+      </circle>
+      <circle cx="800" cy="600" r="40" fill="#3498db" fill-opacity="0.12">
+        <animate attributeName="r" values="40;45;40;35;40" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="fill-opacity" values="0.12;0.2;0.12;0.08;0.12" dur="5s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Left side big circle group (mirrored) -->
+      <circle cx="400" cy="600" r="80" fill="none" stroke="#3498db" stroke-width="2" opacity="0.2">
+        <animate attributeName="r" values="80;85;80;75;80" dur="9s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="2;3;2;1;2" dur="7s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="400" cy="600" r="60" fill="none" stroke="#2980b9" stroke-width="1" opacity="0.18">
+        <animate attributeName="r" values="60;65;60;55;60" dur="11s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" values="0 400 600; -360 400 600" dur="25s"
+          repeatCount="indefinite" />
+      </circle>
+      <circle cx="400" cy="600" r="40" fill="#3498db" fill-opacity="0.12">
+        <animate attributeName="r" values="40;45;40;35;40" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="fill-opacity" values="0.12;0.2;0.12;0.08;0.12" dur="6s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Floating tech elements with smooth animations -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="100,100; 105,95; 100,100; 95,105; 100,100"
+          dur="8s" repeatCount="indefinite" />
+        <circle cx="20" cy="20" r="8" fill="none" stroke="#3498db" stroke-width="1" opacity="0.25">
+          <animate attributeName="r" values="8;12;8;4;8" dur="6s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="20" cy="20" r="3" fill="#2980b9" opacity="0.3">
+          <animate attributeName="r" values="3;5;3;1;3" dur="3s" repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="1000,400; 1005,395; 1000,400; 995,405; 1000,400" dur="10s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" values="45; 55; 45; 35; 45" dur="12s"
+          repeatCount="indefinite" additive="sum" />
+        <circle cx="30" cy="30" r="20" fill="none" stroke="#3498db" stroke-width="2" opacity="0.22">
+          <animate attributeName="stroke-width" values="2;4;2;1;2" dur="8s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="30" cy="30" r="12" fill="#2980b9" fill-opacity="0.18">
+          <animate attributeName="fill-opacity" values="0.18;0.3;0.18;0.1;0.18" dur="5s" repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      <!-- Subtle grid overlay -->
+      <defs>
+        <pattern id="subtleGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+          <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#3498db" stroke-width="0.5" opacity="0.05" />
+        </pattern>
+      </defs>
+
+      <!-- Animated Wave Lines -->
+      <!-- Wave 1 - Top -->
+      <path id="wave1" d="M 0 200 Q 300 150 600 200 T 1200 200" fill="none" stroke="#3498db" stroke-width="2"
+        opacity="0.3">
+        <animate attributeName="d" values="M 0 200 Q 300 150 600 200 T 1200 200;
+                  M 0 200 Q 300 250 600 200 T 1200 200;
+                  M 0 200 Q 300 150 600 200 T 1200 200" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0.5;0.3" dur="6s" repeatCount="indefinite" />
+      </path>
+    </svg>
+    <!-- Small "Hello" badge -->
+    <div class="flex flex-col gap-2 w-full max-w-7xl mx-auto">
+      <div class="relative z-10 mb-4 sm:mb-6 flex justify-center">
+        <div
+          class="inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-accent/10 backdrop-blur-sm rounded-full text-accent text-xs sm:text-sm font-medium tracking-wide animate-pulse">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          IT Services & Consulting
+        </div>
+      </div>
+      <h1
+        class="hero-title font-mono text-4xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold text-primary dark:text-textDarkTheme leading-tight relative z-10 px-2 sm:px-4">
+        Aptapolis <span class="text-accent">Technology</span>
+      </h1>
+      <div class="flex justify-center mt-6 relative z-10">
+        <div class="flex items-center space-x-3 text-accent">
+          <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L13.09 8.26L20 9L13.09 15.74L12 22L10.91 15.74L4 9L10.91 8.26L12 2Z" />
+            </svg>
+          </div>
+          <span class="text-lg sm:text-xl md:text-2xl font-medium text-textLight dark:text-textDarkSecondary">Excellence
+            in Every Solution</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About -->
+  <section class="py-20 bg-white dark:bg-bgDark relative dark-mode-transition" id="about-section">
+    <div class="content-container">
+      <!-- Enhanced decorative SVG background -->
+      <svg class="absolute top-0 right-0 w-64 h-64 opacity-5 pointer-events-none" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="url(#aboutGradient)" />
+        <rect x="120" y="30" width="40" height="40" rx="12" fill="#3498db" fill-opacity="0.1" />
+        <defs>
+          <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3498db" />
+            <stop offset="100%" stop-color="#2c3e50" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h2 class="text-center font-mono section-heading mb-12 font-bold text-primary dark:text-textDarkTheme reveal-up">
+        About <span class="text-accent">Us</span>
+      </h2>
+      <div
+        class="max-w-4xl mx-auto reveal-fade bg-white dark:bg-cardDark rounded-3xl border border-gray-300 dark:border-borderDark p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+        <p class="text-textLight dark:text-textDarkSecondary mb-6 text-center body-text leading-relaxed">
+          We're the tech wizards who believe every business challenge is just
+          an opportunity in disguise! At Aptapolis, we don't just build
+          software—we craft digital experiences that make your team say "wow"
+          and your customers smile.
+        </p>
+        <p class="text-textLight dark:text-textDarkSecondary mb-6 text-center body-text leading-relaxed">
+          Trust, quality, and results that actually matter? That's our daily
+          recipe. We make technology your best friend, not your biggest
+          headache!
+        </p>
+        <div class="flex justify-center mt-8">
+          <div class="flex items-center space-x-4 text-accent">
+            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L13.09 8.26L20 9L13.09 15.74L12 22L10.91 15.74L4 9L10.91 8.26L12 2Z" />
+              </svg>
+            </div>
+            <span class="body-text font-medium text-textDark dark:text-textDarkTheme">Excellence in Every
+              Solution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="flex py-16 gap-10 bg-white dark:bg-bgDark md:flex-row flex-col dark-mode-transition"
+    id="services-section">
+    <div class="content-container">
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <!-- Services Content -->
+        <div class="flex-1 reveal-left">
+          <h2 class="font-mono section-heading mb-5 font-bold text-primary dark:text-textDarkTheme">
+            Our <span class="text-accent">Services</span>
+          </h2>
+
+          <p class="text-textLight dark:text-textDarkSecondary mb-5 body-text">
+            Ready to supercharge your business? We deliver mind-blowing
+            software solutions that turn your biggest challenges into your
+            greatest wins!
+          </p>
+
+          <!-- Metrics and insights section -->
+          <div class="responsive-grid mb-8">
+            <div
+              class="backdrop-blur-md bg-white dark:bg-cardDark p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-borderDark text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 reveal-up dark-mode-transition">
+              <div class="text-accent text-3xl sm:text-4xl font-bold mb-2 counter-text" data-count="5">
+                0+
+              </div>
+              <div class="text-textLight dark:text-textDarkSecondary responsive-text-sm font-medium">
+                Projects Completed
+              </div>
+              <div class="w-full h-1 bg-accent/20 rounded-full mt-3 progress-bar-container">
+                <div class="h-full bg-accent rounded-full progress-bar" data-width="50" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div
+              class="backdrop-blur-md bg-white dark:bg-cardDark p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-borderDark text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 reveal-up dark-mode-transition">
+              <div class="text-accent text-3xl sm:text-4xl font-bold mb-2 counter-text" data-count="99">
+                0%
+              </div>
+              <div class="text-textLight dark:text-textDarkSecondary responsive-text-sm font-medium">
+                Client Satisfaction
+              </div>
+              <div class="w-full h-1 bg-accent/20 rounded-full mt-3 progress-bar-container">
+                <div class="h-full bg-accent rounded-full progress-bar" data-width="99" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div
+              class="backdrop-blur-md bg-white dark:bg-cardDark p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-borderDark text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 reveal-up dark-mode-transition">
+              <div class="text-accent text-3xl sm:text-4xl font-bold mb-2 counter-text" data-count="6">
+                0+
+              </div>
+              <div class="text-textLight dark:text-textDarkSecondary responsive-text-sm font-medium">
+                Expert Developers
+              </div>
+              <div class="w-full h-1 bg-accent/20 rounded-full mt-3 progress-bar-container">
+                <div class="h-full bg-accent rounded-full progress-bar" data-width="100" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-textLight dark:text-textDarkSecondary mb-8 body-text">
+            Innovation meets execution! We turn complex puzzles into elegant
+            solutions that make your business shine and your competitors
+            wonder "how did they do that?"
+          </p>
+
+          <!-- Technology Icons -->
+          <div class="flex gap-6 mb-6">
+            <div
+              class="w-14 h-14 bg-white dark:bg-cardDarkSecondary rounded-2xl flex items-center justify-center border border-gray-200 dark:border-borderDark transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 dark-mode-transition">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div
+              class="w-14 h-14 bg-white dark:bg-cardDarkSecondary rounded-2xl flex items-center justify-center border border-gray-200 dark:border-borderDark transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 dark-mode-transition">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <div
+              class="w-14 h-14 bg-white dark:bg-cardDarkSecondary rounded-2xl flex items-center justify-center border border-gray-200 dark:border-borderDark transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 dark-mode-transition">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Image -->
+        <div class="flex-1 md:order-last order-first reveal-left flex flex-col items-start">
+          <div
+            class="relative w-full h-full min-h-[300px] min-w-[320px] px-4 overflow-hidden rounded-3xl bg-white dark:bg-cardDark flex items-center justify-center dark-mode-transition mb-8">
+            <img src="assets/logo.png" alt="Aptapolis Technology Logo"
+              class="w-auto h-32 md:h-40 lg:h-48 opacity-90 hover:opacity-100 transition-opacity duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent rounded-3xl"></div>
+          </div>
+
+          <!-- Projects Completed Section -->
+          <div class="w-full">
+            <div class="flex flex-wrap justify-center gap-2">
+              <a href="https://goglobaledutravel.com/" target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full hover:bg-accent/20 dark:hover:bg-accent/30 transition-all duration-300 cursor-pointer">
+                goglobaledutravel.com
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+
+              <span
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 responsive-text-sm rounded-full opacity-60 cursor-not-allowed">NextInCare</span>
+              <span
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 responsive-text-sm rounded-full opacity-60 cursor-not-allowed">Next4Care</span>
+              <a href="https://toazeo.com/" target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full hover:bg-accent/20 dark:hover:bg-accent/30 transition-all duration-300 cursor-pointer">
+                Toazeo (*928*9324#)
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Expertise section -->
+  <section class="py-20 bg-white dark:bg-bgDark dark-mode-transition" id="expertise-section">
+    <div class="content-container">
+      <div class="text-center mb-12 reveal-up">
+        <div class="flex justify-center mb-6">
+          <div
+            class="inline-flex items-center px-4 py-2 bg-accent/10 backdrop-blur-sm rounded-full text-accent responsive-text-sm font-medium tracking-wider uppercase">
+            OUR EXPERTISE
+          </div>
+        </div>
+        <h2 class="font-mono section-heading font-bold text-primary dark:text-textDarkTheme">
+          Solutions That Drive <span class="text-accent">Growth</span>
+        </h2>
+      </div>
+      <div class="responsive-grid">
+        <!-- Enhanced Card 1: Vertical accent bar and icon -->
+        <div
+          class="relative bg-white dark:bg-cardDark p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-borderDark reveal-up flex items-start transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition"
+          style="overflow: visible">
+          <div
+            class="absolute -left-4 top-6 h-16 w-1.5 bg-gradient-to-b from-accent to-accent/50 rounded-full border border-gray-200 dark:border-borderDark">
+          </div>
+          <div class="mr-6 flex-shrink-0">
+            <div class="w-12 h-12 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center">
+              <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="4" stroke="#3498db" stroke-width="2" />
+                <path d="M8 12h8M12 8v8" stroke="#3498db" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-mono responsive-text-xl font-bold mb-4 text-primary dark:text-textDarkTheme">
+              Custom Software Development
+            </h3>
+            <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+              Apps that fit your workflow like a perfectly tailored suit!
+            </p>
+          </div>
+        </div>
+        <!-- Enhanced Card 2: Feature card spanning two columns on large screens -->
+        <div
+          class="relative bg-white dark:bg-cardDark p-8 sm:p-12 rounded-3xl border border-gray-300 dark:border-borderDark reveal-up flex flex-col items-center lg:col-span-2 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition"
+          style="min-height: 280px">
+          <div class="w-16 h-16 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M7 6V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h2a1 1 0 0 1 1 1v11a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a1 1 0 0 1 1-1h2zM9 4v2h6V4H9zm-2 5v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9H7z" />
+              <rect x="9" y="11" width="2" height="2" rx="0.5" />
+              <rect x="11.5" y="11" width="2" height="2" rx="0.5" />
+              <rect x="14" y="11" width="2" height="2" rx="0.5" />
+              <rect x="9" y="13.5" width="2" height="2" rx="0.5" />
+              <rect x="11.5" y="13.5" width="2" height="2" rx="0.5" />
+              <rect x="14" y="13.5" width="2" height="2" rx="0.5" />
+            </svg>
+          </div>
+          <h3 class="font-mono responsive-text-2xl font-bold mb-6 text-primary dark:text-textDarkTheme text-center">
+            Mobile App Development & SaaS Solutions
+          </h3>
+          <p class="text-textLight dark:text-textDarkSecondary max-w-2xl text-center body-text leading-relaxed">
+            Mobile magic meets cloud power! We create apps that users love and
+            platforms that scale like skyscrapers.
+          </p>
+        </div>
+        <!-- Enhanced Card 3: Card with background image and overlay -->
+        <div
+          class="bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark p-6 sm:p-8 rounded-3xl reveal-up relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+          <div class="absolute inset-0 bg-white/95 dark:bg-cardDark/95 rounded-3xl"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <h3 class="font-mono responsive-text-xl font-bold mb-4 text-primary dark:text-textDarkTheme">
+              Business Automation Tools
+            </h3>
+            <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+              Say goodbye to repetitive tasks—hello to superhuman efficiency!
+            </p>
+          </div>
+        </div>
+        <!-- Enhanced Card 4: Card with subtle shadow and border accent -->
+        <div
+          class="bg-white dark:bg-cardDark p-6 sm:p-8 rounded-3xl border border-gray-300 dark:border-borderDark reveal-up transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+          <div class="w-12 h-12 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+          </div>
+          <h3 class="font-mono responsive-text-xl font-bold mb-4 text-primary dark:text-textDarkTheme">
+            IT Consulting & Digital Strategy
+          </h3>
+          <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+            Your tech compass for navigating the digital jungle! Smart
+            decisions, sustainable growth.
+          </p>
+        </div>
+        <!-- Enhanced Card 5: Standard card for contrast -->
+        <div
+          class="bg-white dark:bg-cardDark p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-borderDark reveal-up transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+          <div class="w-12 h-12 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+            </svg>
+          </div>
+          <h3 class="font-mono responsive-text-xl font-bold mb-4 text-primary dark:text-textDarkTheme">
+            Support & Maintenance
+          </h3>
+          <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+            We've got your back, even after launch day! Updates, fixes, and
+            support that never sleeps.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Choose section -->
+  <section class="py-16 bg-white dark:bg-bgDark dark-mode-transition" id="why-section">
+    <div class="content-container">
+      <div class="text-center mb-10 reveal-up">
+        <h2 class="font-mono section-heading mb-8 font-bold text-primary dark:text-textDarkTheme text-center reveal-up">
+          Why Choose Aptapolis?
+        </h2>
+        <div class="responsive-grid">
+          <div
+            class="reveal-left flex items-start gap-4 bg-white dark:bg-cardDark rounded-xl p-6 sm:p-8 border border-borderLight dark:border-borderDark hover:border-accent/20 duration-300 dark-mode-transition"
+            style="min-height: 140px">
+            <div class="flex-shrink-0 text-2xl text-accent">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary dark:text-textDarkTheme mb-1 tracking-wide responsive-text-lg"
+                style="letter-spacing: 0.03em">
+                your success is our obsession
+              </h3>
+              <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+                We don't just build software—we build partnerships that make
+                your wildest business dreams come true!
+              </p>
+            </div>
+          </div>
+          <div
+            class="reveal-left flex items-start gap-4 bg-white dark:bg-cardDark rounded-xl p-6 sm:p-8 border border-borderLight dark:border-borderDark hover:border-accent/20 duration-300 dark-mode-transition"
+            style="min-height: 140px">
+            <div class="flex-shrink-0 text-2xl text-accent">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary dark:text-textDarkTheme mb-1 tracking-wide responsive-text-lg"
+                style="letter-spacing: 0.03em">
+                deadline ninjas in action
+              </h3>
+              <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+                Quality + Speed = Happy clients! We deliver excellence faster
+                than you can say "when will it be ready?"
+              </p>
+            </div>
+          </div>
+          <div
+            class="reveal-left flex items-start gap-4 bg-white dark:bg-cardDark rounded-xl p-6 sm:p-8 border border-borderLight dark:border-borderDark hover:border-accent/20 duration-300 dark-mode-transition"
+            style="min-height: 140px">
+            <div class="flex-shrink-0 text-2xl text-accent">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary dark:text-textDarkTheme mb-1 tracking-wide responsive-text-lg"
+                style="letter-spacing: 0.03em">
+                solutions that grow like magic
+              </h3>
+              <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+                Future-proof technology that evolves with your business dreams
+                and scales to infinity and beyond!
+              </p>
+            </div>
+          </div>
+          <div
+            class="reveal-left flex items-start gap-4 bg-white dark:bg-cardDark rounded-xl p-6 sm:p-8 border border-borderLight dark:border-borderDark hover:border-accent/20 duration-300 dark-mode-transition"
+            style="min-height: 140px">
+            <div class="flex-shrink-0 text-2xl text-accent">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary dark:text-textDarkTheme mb-1 tracking-wide responsive-text-lg"
+                style="letter-spacing: 0.03em">
+                cutting-edge tech wizards
+              </h3>
+              <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+                We speak fluent "future" and build with tomorrow's tech today.
+                Your competition won't know what hit them!
+              </p>
+            </div>
+          </div>
+          <div
+            class="reveal-left flex items-start gap-4 bg-white dark:bg-cardDark rounded-xl p-6 sm:p-8 border border-borderLight dark:border-borderDark hover:border-accent/20 duration-300 md:col-span-2 dark-mode-transition"
+            style="min-height: 140px">
+            <div class="flex-shrink-0 text-2xl text-accent">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary dark:text-textDarkTheme mb-1 tracking-wide responsive-text-lg"
+                style="letter-spacing: 0.03em">
+                your dream team awaits
+              </h3>
+              <p class="text-textLight dark:text-textDarkSecondary body-text leading-relaxed">
+                Passionate experts who treat your success like it's our own
+                family business. Because in a way, it is!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Team Section -->
+  <section class="py-20 bg-white dark:bg-bgDark relative overflow-hidden dark-mode-transition" id="team-section">
+    <div class="content-container">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 opacity-5">
+        <svg width="100%" height="100%" viewBox="0 0 800 600">
+          <defs>
+            <pattern id="teamPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle cx="50" cy="50" r="2" fill="#3498db" opacity="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#teamPattern)" />
+          <circle cx="200" cy="100" r="150" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+          <circle cx="600" cy="400" r="100" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+        </svg>
+      </div>
+
+      <div class="relative z-10">
+        <div class="text-center mb-16 reveal-up">
+          <div class="flex justify-center mb-6">
+            <div
+              class="inline-flex items-center px-4 py-2 bg-accent/10 dark:bg-accent/20 backdrop-blur-sm rounded-full text-accent responsive-text-sm font-medium tracking-wider uppercase">
+              MEET THE TEAM
+            </div>
+          </div>
+          <h2 class="font-mono section-heading font-bold text-primary dark:text-textDarkTheme mb-6">
+            The Minds Behind <span class="text-accent">Innovation</span>
+          </h2>
+          <p class="text-textLight dark:text-textDarkSecondary body-text max-w-3xl mx-auto leading-relaxed">
+            Our passionate team of experts is dedicated to turning your vision
+            into reality with cutting-edge technology and creative solutions.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          <!-- Team Member 1 - Cosmos -->
+          <div class="group relative reveal-right team-card order-1 lg:order-1">
+            <div
+              class="relative bg-white dark:bg-cardDark rounded-3xl p-8 border border-borderLight dark:border-borderDark transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl hover:shadow-accent/15 dark-mode-transition">
+              <!-- Profile Picture with Animated Circles -->
+              <div class="relative flex justify-center mb-6">
+                <div class="relative">
+                  <!-- Animated rotating circle -->
+                  <div class="absolute inset-0 animate-spin rotating-circle" style="animation-duration: 18s">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="65" fill="none" stroke="#3498db" stroke-width="2" opacity="0.3"
+                        stroke-dasharray="8,4" />
+                    </svg>
+                  </div>
+                  <!-- Second animated circle (counter-clockwise) -->
+                  <div class="absolute inset-0 animate-spin rotating-circle" style="
+                        animation-duration: 25s;
+                        animation-direction: reverse;
+                      ">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="58" fill="none" stroke="#3498db" stroke-width="1" opacity="0.2"
+                        stroke-dasharray="6,2" />
+                    </svg>
+                  </div>
+                  <!-- Pulsing outer ring -->
+                  <div class="absolute inset-0 animate-pulse">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="68" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+                    </svg>
+                  </div>
+                  <!-- Profile Image -->
+                  <div class="relative w-32 h-32 mx-auto">
+                    <img
+                      src="https://media.licdn.com/dms/image/v2/D4D03AQFI1mjXL6x7Lw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1682384143818?e=1760572800&amp;v=beta&amp;t=xUyK4ZF7Fwx6gPGnQIPDjLUFId3CvjSGeTm9nPK4ASQ"
+                      alt="Cosmos"
+                      class="w-full h-full object-cover rounded-full border-4 border-white dark:border-borderDark shadow-xl group-hover:scale-105 transition-transform duration-500" />
+                    <!-- Floating dots around image -->
+                    <div class="absolute -top-2 -left-2 w-4 h-4 bg-accent rounded-full animate-bounce"
+                      style="animation-delay: 0.7s"></div>
+                    <div class="absolute -bottom-2 -right-2 w-3 h-3 bg-accent/60 rounded-full animate-bounce"
+                      style="animation-delay: 1.2s"></div>
+                    <div class="absolute top-1/2 -left-4 w-2 h-2 bg-accent/80 rounded-full animate-bounce"
+                      style="animation-delay: 1.7s"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <h3
+                  class="responsive-text-2xl font-bold text-primary dark:text-textDarkTheme mb-2 group-hover:text-accent transition-colors duration-300">
+                  Cosmos Hagan
+                </h3>
+
+                <p class="text-accent font-medium responsive-text-lg mb-4 tracking-wide">
+                  Lead Developer
+                </p>
+                <p class="text-textLight dark:text-textDarkSecondary leading-relaxed mb-6 body-text">
+                  Cosmos is a skilled developer and strategic leader with a
+                  strong specialization in backend systems architecture and
+                  performance optimization. With deep expertise in Laravel,
+                  Ruby on Rails, and SQL, he builds secure and efficient APIs.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Laravel</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Ruby on
+                    Rails</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">PostgreSQL</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">MySQL</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">REST
+                    APIs</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center gap-4">
+                  <a href="https://www.linkedin.com/in/cosmoshagan" target="_blank"
+                    class="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a href="https://github.com/Cosmosha" target="_blank"
+                    class="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 - Daniel -->
+          <div class="group relative reveal-left team-card order-2 lg:order-2">
+            <div
+              class="relative bg-white dark:bg-cardDark rounded-3xl p-8 border border-borderLight dark:border-borderDark transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl hover:shadow-accent/15 dark-mode-transition">
+              <!-- Profile Picture with Animated Circles -->
+              <div class="relative flex justify-center mb-6">
+                <div class="relative">
+                  <!-- Animated rotating circle -->
+                  <div class="absolute inset-0 animate-spin" style="animation-duration: 15s">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="65" fill="none" stroke="#3498db" stroke-width="2" opacity="0.3"
+                        stroke-dasharray="5,5" />
+                    </svg>
+                  </div>
+                  <!-- Second animated circle (counter-clockwise) -->
+                  <div class="absolute inset-0 animate-spin" style="
+                        animation-duration: 20s;
+                        animation-direction: reverse;
+                      ">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="58" fill="none" stroke="#3498db" stroke-width="1" opacity="0.2"
+                        stroke-dasharray="3,3" />
+                    </svg>
+                  </div>
+                  <!-- Pulsing outer ring -->
+                  <div class="absolute inset-0 animate-pulse">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="68" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+                    </svg>
+                  </div>
+                  <!-- Profile Image -->
+                  <div class="relative w-32 h-32 mx-auto">
+                    <img src="https://avatars.githubusercontent.com/u/124435531?v=4" alt="Daniel Adeabah"
+                      class="w-full h-full object-cover rounded-full border-4 border-white dark:border-borderDark shadow-xl group-hover:scale-105 transition-transform duration-500" />
+                    <!-- Floating dots around image -->
+                    <div class="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full animate-bounce"
+                      style="animation-delay: 0.5s"></div>
+                    <div class="absolute -bottom-2 -left-2 w-3 h-3 bg-accent/60 rounded-full animate-bounce"
+                      style="animation-delay: 1s"></div>
+                    <div class="absolute top-1/2 -right-4 w-2 h-2 bg-accent/80 rounded-full animate-bounce"
+                      style="animation-delay: 1.5s"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <h3
+                  class="responsive-text-2xl font-bold text-primary dark:text-textDarkTheme mb-2 group-hover:text-accent transition-colors duration-300">
+                  Daniel Adeabah
+                </h3>
+                <p class="text-accent font-medium responsive-text-lg mb-4 tracking-wide">
+                  Fullstack Developer
+                </p>
+                <p class="text-textLight dark:text-textDarkSecondary leading-relaxed mb-6 body-text">
+                  As a Fullstack Developer, Daniel brings over 8 years of
+                  experience in modern web technologies and AI solutions. He
+                  specializes in creating end-to-end applications, intelligent
+                  systems, and scalable cloud architectures on AWS.
+                </p>
+
+                <!-- Skills/Expertise badges -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Vue</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">React</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Node.js</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">AI/ML</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">AWS</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">REST
+                    APIs</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">PostgreSQL</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center gap-4">
+                  <a href="https://www.linkedin.com/in/danieladeabaa" target="_blank"
+                    class="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a href="https://github.com/danieladeabah" target="_blank"
+                    class="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </a>
+                  <a href="https://danieladeabah.com/" target="_blank"
+                    class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 - Justice Baiden -->
+          <div class="group relative reveal-up team-card order-3 lg:order-3">
+            <div
+              class="relative bg-white dark:bg-cardDark rounded-3xl p-8 border border-borderLight dark:border-borderDark transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl hover:shadow-accent/15 dark-mode-transition">
+              <!-- Profile Picture with Animated Circles -->
+              <div class="relative flex justify-center mb-6">
+                <div class="relative">
+                  <!-- Animated rotating circle -->
+                  <div class="absolute inset-0 animate-spin rotating-circle" style="animation-duration: 22s">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="65" fill="none" stroke="#3498db" stroke-width="2" opacity="0.3"
+                        stroke-dasharray="10,2" />
+                    </svg>
+                  </div>
+                  <!-- Second animated circle (counter-clockwise) -->
+                  <div class="absolute inset-0 animate-spin rotating-circle" style="
+                        animation-duration: 28s;
+                        animation-direction: reverse;
+                      ">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="58" fill="none" stroke="#3498db" stroke-width="1" opacity="0.2"
+                        stroke-dasharray="4,4" />
+                    </svg>
+                  </div>
+                  <!-- Pulsing outer ring -->
+                  <div class="absolute inset-0 animate-pulse">
+                    <svg width="140" height="140" class="absolute inset-0">
+                      <circle cx="70" cy="70" r="68" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+                    </svg>
+                  </div>
+                  <!-- Profile Image -->
+                  <div class="relative w-32 h-32 mx-auto">
+                    <img
+                      src="https://media.licdn.com/dms/image/v2/C4D03AQFjY3WYNkL-Pw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1641309997770?e=1759363200&amp;v=beta&amp;t=RnKNkbDO7VcEFSWvBc9qftv4MXEoonKXnMzqzR8spHA"
+                      alt="Justice Baiden"
+                      class="w-full h-full object-cover rounded-full border-4 border-white dark:border-borderDark shadow-xl group-hover:scale-105 transition-transform duration-500" />
+                    <!-- Floating dots around image -->
+                    <div class="absolute -top-2 -left-2 w-4 h-4 bg-accent rounded-full animate-bounce"
+                      style="animation-delay: 0.9s"></div>
+                    <div class="absolute -bottom-2 -right-2 w-3 h-3 bg-accent/60 rounded-full animate-bounce"
+                      style="animation-delay: 1.4s"></div>
+                    <div class="absolute top-1/2 -left-4 w-2 h-2 bg-accent/80 rounded-full animate-bounce"
+                      style="animation-delay: 1.9s"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <h3
+                  class="responsive-text-2xl font-bold text-primary dark:text-textDarkTheme mb-2 group-hover:text-accent transition-colors duration-300">
+                  Justice Baiden
+                </h3>
+
+                <p class="text-accent font-medium responsive-text-lg mb-4 tracking-wide">
+                  Head Of Operation
+                </p>
+                <p class="text-textLight dark:text-textDarkSecondary leading-relaxed mb-6 body-text">
+                  Justice is a results-driven business development
+                  professional and certified PMP, known for leading strategic
+                  initiatives and driving sustainable growth while mentoring
+                  emerging talent.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Business
+                    Development</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Strategic
+                    Growth</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Innovation</span>
+                  <span
+                    class="px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent responsive-text-sm rounded-full">Project
+                    Management</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center">
+                  <a href="https://www.linkedin.com/in/justice-kwamena-baiden-msc-pmp-®-8044a822a/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110"
+                    title="Connect with Justice Baiden on LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extended Team Section - Full Width -->
+        <div class="mt-16 reveal-up">
+          <div
+            class="relative bg-gradient-to-br from-accent/5 via-white to-accent/10 dark:from-accent/10 dark:via-cardDark dark:to-accent/5 rounded-3xl p-8 sm:p-12 border border-accent/20 dark:border-accent/30 overflow-hidden dark-mode-transition">
+            <!-- Background decoration -->
+            <div class="absolute inset-0 opacity-30">
+              <svg width="100%" height="100%" viewBox="0 0 400 300">
+                <defs>
+                  <pattern id="extendedTeamPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <circle cx="30" cy="30" r="1.5" fill="#3498db" opacity="0.3" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#extendedTeamPattern)" />
+                <circle cx="80" cy="50" r="40" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+                <circle cx="320" cy="200" r="60" fill="none" stroke="#3498db" stroke-width="1" opacity="0.1" />
+              </svg>
+            </div>
+
+            <div class="relative z-10">
+              <!-- Header Section -->
+              <div class="text-center mb-12">
+                <div class="flex justify-center mb-6">
+                  <div class="relative">
+                    <!-- Animated team icons -->
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="relative">
+                        <a href="https://www.linkedin.com/in/diana-ashun-802150164" target="_blank"
+                          rel="noopener noreferrer" title="Diana Ashun - Administrative Assistant"
+                          class="block w-16 h-16 rounded-full overflow-hidden border-4 border-accent/40 animate-pulse hover:border-accent/60 transition-all duration-300 hover:scale-105">
+                          <img
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQEIQFhObiNQug/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714044991343?e=1759363200&amp;v=beta&amp;t=MpnAOopKtv8egi4RJyOPHj4vhs7smRWkc8r6iMJOI74"
+                            alt="Team Member - Diana Ashun" class="w-full h-full object-cover team-photo" />
+                        </a>
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full animate-bounce"
+                          style="animation-delay: 0.2s"></div>
+                      </div>
+                      <div class="relative">
+                        <a href="https://www.linkedin.com/in/peh-joseph-b1066a1b4/" target="_blank"
+                          rel="noopener noreferrer" title="Peh Joseph - Fullstack / Cloud Engineer"
+                          class="block w-16 h-16 rounded-full overflow-hidden border-4 border-accent/40 animate-pulse hover:border-accent/60 transition-all duration-300 hover:scale-105"
+                          style="animation-delay: 0.5s">
+                          <img
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQHWgKfJTF-4bQ/profile-displayphoto-shrink_200_200/B4DZZ.OyhYHIAY-/0/1745874529392?e=1759363200&amp;v=beta&amp;t=SJ4vzmGlVO2-K7BbJHiu0gDnxakTulyjW620B-DZ61A"
+                            alt="Team Member - Joseph Peh" class="w-full h-full object-cover team-photo" />
+                        </a>
+                        <div class="absolute -top-2 -right-2 w-5 h-5 bg-accent/80 rounded-full animate-bounce"
+                          style="animation-delay: 0.7s"></div>
+                      </div>
+                      <div class="relative">
+                        <a href="https://www.linkedin.com/in/mensstephannie" target="_blank" rel="noopener noreferrer"
+                          title="Stephanie Mensah - Secretary"
+                          class="block w-16 h-16 rounded-full overflow-hidden border-4 border-accent/40 animate-pulse hover:border-accent/60 transition-all duration-300 hover:scale-105"
+                          style="animation-delay: 1s">
+                          <img
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQHEXEs3FU-6ag/profile-displayphoto-shrink_200_200/B4DZSPh5.RG4AY-/0/1737574818506?e=1759363200&amp;v=beta&amp;t=iy8bwVKhzQCLH68PIgJiAyMPHazNo24EvLcgcuNXLoQ"
+                            alt="Team Member - Stephanie Mensah" class="w-full h-full object-cover team-photo" />
+                        </a>
+                        <div class="absolute -bottom-1 -left-1 w-3 h-3 bg-accent/60 rounded-full animate-bounce"
+                          style="animation-delay: 1.2s"></div>
+                      </div>
+                      <div class="relative">
+                        <a href="https://www.linkedin.com/in/martha-blessing-eshun-aa0528240/" target="_blank"
+                          rel="noopener noreferrer" title="Martha Eshun - Customer Service Specialist"
+                          class="block w-16 h-16 rounded-full overflow-hidden border-4 border-accent/40 animate-pulse hover:border-accent/60 transition-all duration-300 hover:scale-105"
+                          style="animation-delay: 1.3s">
+                          <img
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQG9aL__902rDA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1696338325995?e=1759363200&amp;v=beta&amp;t=ZRN9Dw4U35LvwyPS8ZvzTCOIo5fpxRIKbi3YsjIPPc4"
+                            alt="Team Member - Martha Eshun" class="w-full h-full object-cover team-photo" />
+                        </a>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent/80 rounded-full animate-bounce"
+                          style="animation-delay: 1.5s"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="responsive-text-3xl font-bold text-primary dark:text-textDarkTheme mb-4">
+                  +4 Expert Team Members
+                </h3>
+                <p class="text-accent font-medium responsive-text-xl mb-6 tracking-wide">
+                  Core Team Members
+                </p>
+                <p class="text-textLight dark:text-textDarkSecondary leading-relaxed mb-8 body-text max-w-4xl mx-auto">
+                  Our dedicated team brings together technical expertise,
+                  administrative excellence, and customer-focused service.
+                  From fullstack development and cloud engineering to seamless
+                  administrative support and exceptional customer service, we
+                  work together to deliver outstanding results for every
+                  project.
+                </p>
+              </div>
+
+              <!-- Skills Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div
+                  class="group bg-white dark:bg-cardDarkSecondary rounded-2xl p-6 border border-accent/20 dark:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 text-center">
+                  <div
+                    class="w-12 h-12 bg-accent/20 dark:bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-primary dark:text-textDarkTheme mb-2">
+                    Development
+                  </h4>
+                  <p class="text-textLight dark:text-textDarkSecondary text-sm">
+                    Fullstack & Cloud
+                  </p>
+                </div>
+
+                <div
+                  class="group bg-white dark:bg-cardDarkSecondary rounded-2xl p-6 border border-accent/20 dark:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 text-center">
+                  <div
+                    class="w-12 h-12 bg-accent/20 dark:bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-primary dark:text-textDarkTheme mb-2">
+                    Administration
+                  </h4>
+                  <p class="text-textLight dark:text-textDarkSecondary text-sm">
+                    Office Management
+                  </p>
+                </div>
+
+                <div
+                  class="group bg-white dark:bg-cardDarkSecondary rounded-2xl p-6 border border-accent/20 dark:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 text-center">
+                  <div
+                    class="w-12 h-12 bg-accent/20 dark:bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-primary dark:text-textDarkTheme mb-2">
+                    Customer Service
+                  </h4>
+                  <p class="text-textLight dark:text-textDarkSecondary text-sm">
+                    Client Relations
+                  </p>
+                </div>
+
+                <div
+                  class="group bg-white dark:bg-cardDarkSecondary rounded-2xl p-6 border border-accent/20 dark:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 text-center">
+                  <div
+                    class="w-12 h-12 bg-accent/20 dark:bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-primary dark:text-textDarkTheme mb-2">
+                    Team Support
+                  </h4>
+                  <p class="text-textLight dark:text-textDarkSecondary text-sm">
+                    Coordination & Assistance
+                  </p>
+                </div>
+              </div>
+
+              <!-- Call to Action -->
+              <div class="text-center">
+                <div
+                  class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent to-accent/80 text-white rounded-full font-medium hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                  Ready to Serve
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section
+    class="py-16 bg-white dark:bg-bgDark flex flex-col-reverse lg:flex-row-reverse gap-10 items-stretch dark-mode-transition"
+    id="contact-section">
+    <div class="content-container">
+      <div class="flex flex-col lg:flex-row gap-10 items-stretch">
+        <!-- Contact Us -->
+        <div
+          class="flex-1 flex flex-col justify-center bg-white dark:bg-cardDark rounded-3xl p-8 sm:p-10 border border-gray-200 dark:border-none transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+          <h2
+            class="font-mono section-heading mb-8 font-bold reveal-up text-center text-textDark dark:text-textDarkTheme">
+            Contact <span class="text-accent">Us</span>
+          </h2>
+          <p
+            class="mb-10 max-w-[600px] mx-auto text-textLight dark:text-textDarkSecondary reveal-fade text-center body-text leading-relaxed">
+            Got an amazing idea brewing? Let's chat and turn it into digital
+            gold! Coffee's on us (virtually).
+          </p>
+          <div class="grid grid-cols-1 gap-8 max-w-[800px] mx-auto mb-8">
+            <div
+              class="bg-white dark:bg-cardDarkSecondary p-6 sm:p-8 rounded-md border reveal-up flex items-center gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10 dark:border-borderDark dark-mode-transition">
+              <div
+                class="w-16 h-16 bg-accent/20 dark:bg-accent/30 rounded-md flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold mb-2 responsive-text-lg text-textDark dark:text-textDarkTheme">
+                  Phone
+                </h3>
+                <p class="text-textLight dark:text-textDarkSecondary body-text">
+                  +233 540 891 028
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-cardDarkSecondary p-6 sm:p-8 rounded-md border reveal-up flex items-center gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10 dark:border-borderDark dark-mode-transition">
+              <div
+                class="w-16 h-16 bg-accent/20 dark:bg-accent/30 rounded-md flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold mb-2 responsive-text-lg text-textDark dark:text-textDarkTheme">
+                  Email
+                </h3>
+                <p class="text-textLight dark:text-textDarkSecondary body-text break-all">
+                  info@Aptapoliss.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Review/Testimonial -->
+        <div id="testimonialBox"
+          class="flex-1 flex flex-col justify-center items-center bg-white dark:bg-cardDark rounded-3xl p-8 sm:p-10 mb-8 lg:mb-0 reveal-fade cursor-pointer transition-all duration-500 border border-gray-200 dark:border-none hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 dark-mode-transition">
+          <div class="w-16 h-16 bg-accent/20 dark:bg-accent/30 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <div class="text-yellow-400 text-3xl mb-8" id="testimonialStars">
+            ★★★★★
+          </div>
+          <blockquote
+            class="responsive-text-xl leading-relaxed mb-8 font-mono text-textDark dark:text-textDarkTheme text-center max-w-2xl"
+            id="testimonialQuote">
+            "Transformed our chaos into digital paradise! Their support team
+            is like having tech superheroes on speed dial!"
+          </blockquote>
+          <p class="text-textLight dark:text-textDarkSecondary font-medium text-center body-text"
+            id="testimonialAuthor">
+            Michael Johnson, CEO of TechFlow Solutions
+          </p>
+          <!-- Testimonial dots navigation -->
+          <div id="testimonialDots" class="flex gap-3 mt-8">
+            <!-- Dots will be rendered here by JS -->
+          </div>
+          <!-- Enhanced decorative SVG quote icon -->
+          <svg class="absolute -top-8 left-8 w-16 h-16 opacity-10" viewBox="0 0 48 48" fill="none">
+            <path d="M16 20c0-6 4-10 10-10s10 4 10 10-4 10-10 10" stroke="#3498db" stroke-width="3"
+              stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-bgDark text-textLight dark:text-textDarkSecondary dark-mode-transition">
+    <div class="content-container lg:border-t border-borderLight dark:border-borderDark py-3">
+      <!-- Main footer content -->
+      <div class="flex justify-between items-center mb-3">
+        <div>
+          <p class="text-textDark dark:text-textDarkTheme body-text">
+            © <span id="currentYear"></span> - Aptapolis
+            <span class="text-accent">Technology</span>
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <a href="#"
+            class="text-textLight dark:text-textDarkSecondary hover:text-accent transition-colors cursor-pointer"
+            aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/company/Aptapolis-technology" target="_blank" rel="noopener"
+            aria-label="LinkedIn"
+            class="text-textLight dark:text-textDarkSecondary hover:text-accent transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="#"
+            class="text-textLight dark:text-textDarkSecondary hover:text-accent transition-colors cursor-pointer"
+            aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Registration details section - Mobile only -->
+      <div class="border-t border-borderLight dark:border-borderDark pt-3 lg:hidden">
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-xs text-textLight dark:text-textDarkSecondary">
+          <div class="flex flex-wrap gap-4"></div>
+          <div class="flex items-center gap-1 text-green-600 font-medium">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
+            </svg>
+            Verified Business
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll progress circle with dark/light mode toggle -->
+  <div id="scrollProgress" class="fixed top-6 right-12 z-[100] w-12 h-12 dark-mode-transition"
+    title="Click to toggle dark/light mode">
+    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="#e2e8f0" stroke-width="2" class="dark:stroke-slate-600" />
+      <circle id="progressCircle" cx="20" cy="20" r="18" fill="none" stroke="#3498db" stroke-width="2"
+        stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"
+        class="transition-all duration-300 ease-out dark:stroke-blue-400" />
+    </svg>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <!-- Sun icon for light mode -->
+      <svg id="sunIcon" class="mode-icon w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd" />
+      </svg>
+      <!-- Moon icon for dark mode -->
+      <svg id="moonIcon" class="mode-icon w-6 h-6 text-slate-300 hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn"
+    class="fixed bottom-8 right-8 z-[99] opacity-0 invisible transition-all duration-500 overflow-hidden bg-white dark:bg-cardDark hover:bg-gray-50 dark:hover:bg-cardDarkSecondary text-textLight dark:text-textDarkSecondary hover:text-accent w-12 h-12 rounded-full flex items-center justify-center border border-borderLight dark:border-borderDark hover:border-accent/30 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-accent/20 dark-mode-transition backdrop-blur-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- Fixed Social Media Widget -->
+  <div id="socialMediaWidget"
+    class="fixed top-1/3 md:top-1/2 right-4 transform -translate-y-1/2 z-[98] flex flex-col gap-3 transition-all duration-500">
+    <!-- X (Twitter) -->
+    <a href="#" target="_blank" rel="noopener" aria-label="Follow us on X"
+      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/5 hover transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/company/Aptapolis-technology" target="_blank" rel="noopener"
+      aria-label="Connect on LinkedIn"
+      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/10 hover:border-accent/20 transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg></a>
+
+    <!-- Facebook -->
+    <a href="#" target="_blank" rel="noopener" aria-label="Like us on Facebook"
+      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/10 hover:border-accent/20 transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    </a>
+
+    <!-- GitHub -->
+    <a href="#" target="_blank" rel="noopener" aria-label="View our GitHub"
+      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-textDark dark:hover:text-textDarkTheme hover:bg-bgLight dark:hover:bg-cardDarkSecondary hover:border-borderLight dark:hover:border-borderDark transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+      </svg>
+    </a>
+  </div>
+  <script src="script.js"></script>
+
+
+
+  <!-- Add ScrollToPlugin for smooth scrolling to top -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</body>
+
+</html>
