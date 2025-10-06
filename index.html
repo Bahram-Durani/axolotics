@@ -10,20 +10,12 @@
   <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-status-bar-style" content="light-content" id="status-bar-style" />
   <title>Axolotics Technology</title>
-  <link href="assets/icon.jpg" rel="icon" type="image/png" />
+  <link href="assets/logo.png" rel="icon" type="image/png" />
   <script src="https://cdn.tailwindcss.com/"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <script>
-    window.va =
-      window.va ||
-      function () {
-        window.vaq = window.vaq || [];
-        window.vaq.push(arguments);
-      };
-  </script>
-  <script defer src="_vercel/insights/script.js"></script>
+ 
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -66,30 +58,83 @@
   class="select-none font-sans text-textLight bg-bgLight dark:text-textDarkTheme dark:bg-bgDark dark-mode-transition"
   id="body">
   <!-- Header -->
-  <header class="px-[5%] py-2 z-50 fixed top-0 left-0 w-full transition-all duration-300">
-    <div class="flex items-center justify-between">
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex gap-8 items-center text-sm font-medium bg-white dark:bg-cardDark backdrop-blur-md px-8 py-6 rounded-full border border-borderLight dark:border-borderDark transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 mx-auto dark-mode-transition">
-        <a href="#hero-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Home</a>
-        <a href="#services-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Services</a>
-        <a href="#expertise-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Expertise</a>
-        <a href="#why-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Why Choose</a>
-        <a href="#team-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Team</a>
-        <a href="#about-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">About</a>
-        <a href="#contact-section"
-          class="hover:text-accent transition-all duration-300 focus:outline-2 focus:outline-accent focus:outline-offset-2 rounded-lg px-3 py-1 text-textDark dark:text-textDarkTheme">Contact</a>
-      </nav>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight/90 dark:border-borderDark/90 transition-all duration-300 dark-mode-transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-3">
+          <img src="assets/rem_logo.png" alt="Axolotics Logo" class="h-10 w-10">
+          <span class="font-bold text-xl text-primary dark:text-textDarkTheme">Axolotics</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#hero-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Home</a>
+          <a href="#services-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Services</a>
+          <a href="#expertise-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Expertise</a>
+          <a href="#why-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Why Choose</a>
+          <a href="#team-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Team</a>
+          <a href="#about-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">About</a>
+          <a href="#contact-section"
+            class="text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 font-medium text-sm px-3 py-2 rounded-lg focus:outline-2 focus:outline-accent focus:outline-offset-2">Contact</a>
+        </nav>
+
+        <!-- Right Section: Dark Mode Toggle + Mobile Menu -->
+        <div class="flex items-center space-x-4">
+          <!-- Dark Mode Toggle -->
+          <button id="scrollProgress" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-cardDark border border-borderLight dark:border-borderDark hover:border-accent/30 transition-all duration-300 hover:scale-105 focus:outline-2 focus:outline-accent focus:outline-offset-2 relative overflow-hidden" title="Toggle dark/light mode">
+            <!-- Progress Circle -->
+            <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1" class="text-gray-200 dark:text-gray-600" opacity="0.3" />
+              <circle id="progressCircle" cx="20" cy="20" r="18" fill="none" stroke="#3498db" stroke-width="1.5"
+                stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"
+                class="transition-all duration-300 ease-out dark:stroke-blue-400" opacity="0.7" />
+            </svg>
+            <!-- Mode Icons -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg id="sunIcon" class="mode-icon w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd" />
+              </svg>
+              <svg id="moonIcon" class="mode-icon w-5 h-5 text-slate-300 hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobileMenuBtn" class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg border border-borderLight dark:border-borderDark hover:border-accent/30 transition-all duration-300 space-y-1.5 focus:outline-2 focus:outline-accent focus:outline-offset-2">
+            <span class="hamburger-line w-5 h-0.5 bg-textDark dark:bg-textDarkTheme transition-all duration-300"></span>
+            <span class="hamburger-line w-5 h-0.5 bg-textDark dark:bg-textDarkTheme transition-all duration-300"></span>
+            <span class="hamburger-line w-5 h-0.5 bg-textDark dark:bg-textDarkTheme transition-all duration-300"></span>
+          </button>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobileMenu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-white dark:bg-bgDark transform -translate-y-full transition-transform duration-300 ease-in-out z-[60]">
+      <div class="flex flex-col items-center justify-center h-full space-y-6 text-lg font-medium px-8">
+        <a href="#hero-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Home</a>
+        <a href="#services-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Services</a>
+        <a href="#expertise-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Expertise</a>
+        <a href="#why-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Why Choose</a>
+        <a href="#team-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Team</a>
+        <a href="#about-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">About</a>
+        <a href="#contact-section" class="mobile-nav-link text-textDark dark:text-textDarkTheme hover:text-accent dark:hover:text-accent transition-colors duration-300 py-3 px-6 rounded-lg hover:bg-accent/5 dark:hover:bg-accent/10 w-full text-center">Contact</a>
+      </div>
+    </nav>
   </header>
   <!-- Hero -->
   <section
-    class="hero-full-height flex items-center justify-center w-full px-[3%] sm:px-[5%] bg-white dark:bg-bgDark relative overflow-hidden dark-mode-transition"
+    class="hero-full-height flex items-center justify-center w-full px-[3%] sm:px-[5%] bg-white dark:bg-bgDark relative overflow-hidden dark-mode-transition pt-16"
     id="hero-section">
     <!-- Enhanced Decorative SVG background with sophisticated patterns -->
     <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-75" viewBox="0 0 1200 800"
@@ -868,7 +913,7 @@
             </p>
           </div>
               <!-- Skills Grid -->
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div
                   class="group bg-white dark:bg-cardDarkSecondary rounded-2xl p-6 border border-accent/20 dark:border-accent/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 text-center">
                   <div
@@ -939,7 +984,7 @@
                     Coordination & Assistance
                   </p>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Call to Action -->
               <div class="text-center">
@@ -991,7 +1036,7 @@
                   Phone
                 </h3>
                 <p class="text-textLight dark:text-textDarkSecondary body-text">
-                  +233 540 891 028
+                  +233 540 896 194 <br> +233 500 896 194
                 </p>
               </div>
             </div>
@@ -1058,7 +1103,7 @@
         <div>
           <p class="text-textDark dark:text-textDarkTheme body-text">
             © <span id="currentYear"></span> - Axolotics
-            <span class="text-accent">Technology</span>
+            <span class="text-accent">Technologies</span>
           </p>
         </div>
         <div class="flex gap-4">
@@ -1089,48 +1134,10 @@
         </div>
       </div>
 
-      <!-- Registration details section - Mobile only -->
-      <!-- <div class="border-t border-borderLight dark:border-borderDark pt-3 lg:hidden">
-        <div
-          class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-xs text-textLight dark:text-textDarkSecondary">
-          <div class="flex flex-wrap gap-4"></div>
-          <div class="flex items-center gap-1 text-green-600 font-medium">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd" />
-            </svg>
-            Verified Business
-          </div>
-        </div>
-      </div> -->
-
-
     </div>
   </footer>
 
-  <!-- Scroll progress circle with dark/light mode toggle -->
-  <div id="scrollProgress" class="fixed top-6 right-12 z-[100] w-12 h-12 dark-mode-transition"
-    title="Click to toggle dark/light mode">
-    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 40 40">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="#e2e8f0" stroke-width="2" class="dark:stroke-slate-600" />
-      <circle id="progressCircle" cx="20" cy="20" r="18" fill="none" stroke="#3498db" stroke-width="2"
-        stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"
-        class="transition-all duration-300 ease-out dark:stroke-blue-400" />
-    </svg>
-    <div class="absolute inset-0 flex items-center justify-center">
-      <!-- Sun icon for light mode -->
-      <svg id="sunIcon" class="mode-icon w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd"
-          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-          clip-rule="evenodd" />
-      </svg>
-      <!-- Moon icon for dark mode -->
-      <svg id="moonIcon" class="mode-icon w-6 h-6 text-slate-300 hidden" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-      </svg>
-    </div>
-  </div>
+
 
   <!-- Scroll to top button -->
   <button id="scrollTopBtn"
@@ -1141,48 +1148,10 @@
     </svg>
   </button>
 
-  <!-- Fixed Social Media Widget -->
-  <div id="socialMediaWidget"
-    class="fixed top-1/3 md:top-1/2 right-4 transform -translate-y-1/2 z-[98] flex flex-col gap-3 transition-all duration-500">
-    <!-- X (Twitter) -->
-    <a href="#" target="_blank" rel="noopener" aria-label="Follow us on X"
-      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/5 hover transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    </a>
+  
 
-    <!-- LinkedIn -->
-    <a href="https://linkedin.com/company/Axolotics-technology" target="_blank" rel="noopener"
-      aria-label="Connect on LinkedIn"
-      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/10 hover:border-accent/20 transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg></a>
 
-    <!-- Facebook -->
-    <a href="#" target="_blank" rel="noopener" aria-label="Like us on Facebook"
-      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-accent hover:bg-accent/10 hover:border-accent/20 transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-      </svg>
-    </a>
-
-    <!-- GitHub -->
-    <a href="#" target="_blank" rel="noopener" aria-label="View our GitHub"
-      class="w-12 h-12 bg-white dark:bg-cardDark border border-gray-200 dark:border-borderDark rounded-full flex items-center justify-center text-textLight dark:text-textDarkSecondary hover:text-textDark dark:hover:text-textDarkTheme hover:bg-bgLight dark:hover:bg-cardDarkSecondary hover:border-borderLight dark:hover:border-borderDark transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-lg hover:shadow-xl dark-mode-transition">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-      </svg>
-    </a>
-  </div>
   <script src="script.js"></script>
-
-
 
   <!-- Add ScrollToPlugin for smooth scrolling to top -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
