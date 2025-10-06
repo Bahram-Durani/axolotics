@@ -229,18 +229,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const testimonials = [
     {
       stars: "★★★★★",
-      quote: `"These guys are absolute rockstars! Delivered our project faster than expected and blew our minds with the quality!"`,
-      author: "Sarah Mensah",
+      quote: `"Honestly, I loved the professionalism from this team"`,
+      author: "Mr. Clinton Wright",
     },
     {
       stars: "★★★★★",
-      quote: `"Transformed our chaos into digital paradise! Their support team is like having tech superheroes on speed dial!"`,
-      author: "Michael Johnson",
+      quote: `"Kudos to the Axolotics team, great job done"`,
+      author: "Mad. Cecilia Banks",
     },
     {
       stars: "★★★★★",
-      quote: `"Efficiency went through the roof! Our team actually fights over who gets to use the new system first!"`,
-      author: "Kwame Boateng",
+      quote: `"Had difficulty in automating task in our company, Axolotics helped me out"`,
+      author: "Kweku Frimpong",
     },
   ];
   let testimonialIndex = 0,
